@@ -46,3 +46,38 @@ function printAge (name, age)
 {
     console.log(`${name} tiene ${age} años`)
 }
+
+// Objects
+var gabriel = {
+    name: 'Gabriel',
+    lastname: 'Flores',
+    age: 27
+}
+
+printNameInUpper(gabriel)
+printNameInUpper({ name: 'María' })
+
+function printNameInUpper({ name })
+{
+    console.log('El nombre del objeto es: ' + name.toUpperCase())
+}
+
+printNameAndAge(gabriel)
+
+function printNameAndAge(person)
+{
+    var { name, age } = person
+
+    console.log(`Hola me llamo ${ name } y tengo ${ age } años`)
+}
+
+var birthdayGabriel = birthday(gabriel)
+console.log(birthdayGabriel)
+
+function birthday(person)
+{
+    return {
+        ...person,
+        age: person.age + 1
+    }
+}
