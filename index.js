@@ -51,7 +51,10 @@ function printAge (name, age)
 var gabriel = {
     name: 'Gabriel',
     lastname: 'Flores',
-    age: 27
+    age: 27,
+    ingeniero: true,
+    dj: false,
+    geek: true
 }
 
 printNameInUpper(gabriel)
@@ -81,3 +84,97 @@ function birthday(person)
         age: person.age + 1
     }
 }
+
+// Conditional
+var x= 4 , y ='4'
+
+// If you compare this with == expresion, result is true
+console.log(x == y)
+
+// But you compare this with ===, result is false,because type is distint
+// This expresion is recomended
+console.log(x === y)
+
+// For objects is same
+var obj1 = {
+    name: 'Gabriel'
+}
+
+var obj2 = {
+    name: 'Gabriel'
+}
+
+// Whit == or === expresion, result is false
+console.log(obj1 == obj2)
+
+// But if set obj1 in obj2, result is true, same memory space
+var obj3 = obj1
+console.log(obj1 === obj3)
+
+printProfessions(gabriel)
+
+function printProfessions(person){
+    console.log(`${ person.name } es:`)
+
+    if(person.ingeniero)
+    {
+        console.log(`Es ingeniero`)
+    }
+    else
+    {
+        console.log(`No es ingeniero`)
+    }
+
+    if(person.dj)
+    {
+        console.log(`Es DJ`)
+    }
+    else
+    {
+        console.log(`No es DJ`)
+    }
+
+    if(person.geek)
+    {
+        console.log(`Es geek`)
+    }
+    else
+    {
+        console.log(`No es geek`)
+    }
+}
+
+// Arrow functions
+const ADULT_AGE = 18
+
+//this is same what
+// function isAdult(person)
+// {
+//     return person.age >= ADULT_AGE
+// }
+const IS_ADULT = ({ age }) => age >= ADULT_AGE
+
+printIsAdult(gabriel)
+
+function printIsAdult(person)
+{
+    if(IS_ADULT(person))
+    {
+        console.log(`${ person.name } es mayor de edad`)
+    }
+    else
+    {
+        console.log(`${ person.name } es menor de edad`)
+    }
+}
+
+allowAccess(gabriel)
+
+function allowAccess(person)
+{
+    if(!IS_ADULT(person))
+        console.log('Acceso denegado')
+    else
+        console.log('Acceso autorizado')
+}
+
