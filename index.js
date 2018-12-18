@@ -52,6 +52,7 @@ var gabriel = {
     name: 'Gabriel',
     lastname: 'Flores',
     age: 27,
+    weight: 80,
     ingeniero: true,
     dj: false,
     geek: true
@@ -178,3 +179,45 @@ function allowAccess(person)
         console.log('Acceso autorizado')
 }
 
+// Cycles
+console.log(`Al inicio del año ${gabriel.name} pesa ${gabriel.weight} Kg.`)
+
+const INCREMENT_WEIGHT = 0.2
+
+const gainWeight = person => person.weight += INCREMENT_WEIGHT
+const loseWeight = person => person.weight -= INCREMENT_WEIGHT
+
+for (let i = 1; i <= 365; i++) {
+    var random = Math.random()
+
+    if (random < 0.25) {
+        var ganepeso = gainWeight(gabriel)
+    }
+    else if (random < 0.5) {
+        loseWeight(gabriel)
+    }
+}
+
+console.log(`Al final del año ${gabriel.name} pesa ${gabriel.weight.toFixed(1)} Kg.`)
+
+let signo = prompt('Favor ingresa tu signo')
+
+signo = signo.toLowerCase()
+
+switch (signo) {
+    case 'acuario':
+        console.log('Ha elegido acuario')
+    break
+    
+    case 'piscis':
+        console.log('Ha elegido piscis')
+    break
+    
+    case 'sagitario':
+        console.log('Ha elegido sagitario')
+    break
+
+    default:
+        console.log('Ha elegido un signo no documentado')
+    break
+}
