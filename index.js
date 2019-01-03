@@ -1,53 +1,100 @@
 // Strings
-var name = 'Gabriel', lastname = 'Flores'
+console.log('##########################')
+console.log('Conceptos básicos: Strings')
+console.log('##########################\n\n')
 
-var nameToUpper = name.toUpperCase()
-var lastnameToLower = lastname.toLowerCase()
+function strings(name, lastname)
+{
+    var nameToUpper = name.toUpperCase()
+    console.log(`String a mayúsculas: ${nameToUpper}`)
 
-var firstLetterOfTheName = name.charAt(0)
-var numberOfLetterOfTheName = name.length
+    var lastnameToLower = lastname.toLowerCase()
+    console.log(`String a minúsculas: ${lastnameToLower}`)
 
-// Interpolation of variables
-var fullName = `${name} ${lastname.toUpperCase()}`
+    var firstLetterOfTheName = name.charAt(0)
+    console.log(`Primera letra del string: ${firstLetterOfTheName}`)
 
-// from char 1 to 2 = print ab
-var substring = name.substr(1, 2)
+    var numberOfLetterOfTheName = name.length
+    console.log(`Length: ${numberOfLetterOfTheName}`)
 
+    // Interpolation of variables
+    var fullName = `${name} ${lastname.toUpperCase()}`
+    console.log(`Interpolación: ${fullName}`)
 
-// Numbers
-var age = 27
+    // from char 1 to 2 = print ab
+    var substring = name.substr(1, 2)
+    console.log(`SubString: ${substring}`)
 
-age += 1
+}
 
-age -= 1
+strings('Gabriel', 'Flores')
 
-var year = 1
+//Numbers
+console.log('\n\n')
+console.log('##########################')
+console.log('Conceptos básicos: Números')
+console.log('##########################\n\n')
 
-age += year
+function numbers()
+{
+    var age = 27
+    console.log(`Esta es la edad con la que se va a trabajar: ${age}`)
+    
+    age += 1
+    console.log(`Edad más uno: ${age}`)
 
-var winePrice = 200.3
+    age -= 1
+    console.log(`Edad menos uno: ${age}`)
 
-// Round total price to one decimal
-var total = Math.round(winePrice * 100 *3) / 100
-// Show more decimals (two), this convert to string
-var totalFix = total.toFixed(2)
-// Convert to float totalFix
-var totalFloat = parseFloat(totalFix)
+    var year = 1
+    console.log(`Cantidad de años: ${year}`)
 
-var pizza = 8
-var people = 2
+    age += year
+    console.log(`Edad más año: ${age}`)
 
-var portionsPerPerson = pizza / people
+    var winePrice = 200.3
+    console.log(`Precio del vino: ${winePrice}`)
 
-// Functions
-printAge(name, age)
+    // Round total price to one decimal
+    var total = Math.round(winePrice * 100 *3) / 100
+    console.log(`Redondear a un decimal: ${total}`)
+
+    // Show more decimals (two), this convert to string
+    var totalFix = total.toFixed(2)
+    console.log(`Redondear a dos decimales: ${totalFix}`)
+
+    // Convert to float totalFix
+    var totalFloat = parseFloat(totalFix)
+    console.log(`Convertir a flotante: ${totalFloat}`)
+
+    var pizza = 8
+    var people = 2
+
+    var portionsPerPerson = pizza / people
+    console.log(`8 trozos de pizza dividido 2: ${portionsPerPerson}`)
+}
+
+numbers()
+
+// Funciones
+console.log('\n\n')
+console.log('############################')
+console.log('Conceptos básicos: Funciones')
+console.log('############################\n\n')
 
 function printAge (name, age)
 {
     console.log(`${name} tiene ${age} años`)
 }
 
+printAge('Gabriel', 28)
+
 // Objects
+console.log('\n\n')
+console.log('##########################')
+console.log('Conceptos básicos: Objetos')
+console.log('##########################\n\n')
+
 var gabriel = {
     name: 'Gabriel',
     lastname: 'Flores',
@@ -58,13 +105,13 @@ var gabriel = {
     geek: true
 }
 
-printNameInUpper(gabriel)
-printNameInUpper({ name: 'María' })
-
 function printNameInUpper({ name })
 {
     console.log('El nombre del objeto es: ' + name.toUpperCase())
 }
+
+printNameInUpper(gabriel)
+printNameInUpper({ name: 'María' })
 
 printNameAndAge(gabriel)
 
@@ -75,9 +122,6 @@ function printNameAndAge(person)
     console.log(`Hola me llamo ${ name } y tengo ${ age } años`)
 }
 
-var birthdayGabriel = birthday(gabriel)
-console.log(birthdayGabriel)
-
 function birthday(person)
 {
     return {
@@ -86,36 +130,55 @@ function birthday(person)
     }
 }
 
+console.log('Sobre escribiendo un objeto:')
+var birthdayGabriel = birthday(gabriel)
+console.log(birthdayGabriel)
+
+
 // Conditional
-var x= 4 , y ='4'
+console.log('\n\n')
+console.log('################################')
+console.log('Conceptos básicos: Condicionales')
+console.log('################################\n\n')
 
-// If you compare this with == expresion, result is true
-console.log(x == y)
+function conditionals()
+{
+    var x= 4 , y ='4'
 
-// But you compare this with ===, result is false,because type is distint
-// This expresion is recomended
-console.log(x === y)
+    // If you compare this with == expresion, result is true
+    console.log(`Si X=4 e Y=4 entonces: ${x == y}`)
 
-// For objects is same
-var obj1 = {
-    name: 'Gabriel'
+    // But you compare this with ===, result is false,because type is distint
+    // This expresion is recomended
+    console.log(`Si X es número e Y es string: ${x === y}`)
+
+    // For objects is same
+    var obj1 = {
+        name: 'Gabriel'
+    }
+
+    var obj2 = {
+        name: 'Gabriel'
+    }
+
+    // Whit == or === expresion, result is false
+    console.log(`Lo mismo si comparo obj1 con obj2: ${obj1 == obj2}`)
+
+    // But if set obj1 in obj2, result is true, same memory space
+    var obj3 = obj1
+    console.log(`En cambio si asigno obj1 a obj3: ${obj1 === obj3}`)
 }
 
-var obj2 = {
-    name: 'Gabriel'
-}
+conditionals()
 
-// Whit == or === expresion, result is false
-console.log(obj1 == obj2)
-
-// But if set obj1 in obj2, result is true, same memory space
-var obj3 = obj1
-console.log(obj1 === obj3)
-
-printProfessions(gabriel)
+// Conditional in objects
+console.log('\n\n')
+console.log('###########################################')
+console.log('Conceptos básicos: Condicionales en objetos')
+console.log('###########################################\n\n')
 
 function printProfessions(person){
-    console.log(`${ person.name } es:`)
+    console.log(`${ person.name }:`)
 
     if(person.ingeniero)
     {
@@ -145,7 +208,13 @@ function printProfessions(person){
     }
 }
 
+printProfessions(gabriel)
+
 // Arrow functions
+console.log('\n\n')
+console.log('##################################')
+console.log('Conceptos básicos: Arrow functions')
+console.log('##################################\n\n')
 const ADULT_AGE = 18
 
 //this is same what
@@ -180,44 +249,59 @@ function allowAccess(person)
 }
 
 // Cycles
-console.log(`Al inicio del año ${gabriel.name} pesa ${gabriel.weight} Kg.`)
+console.log('\n\n')
+console.log('#########################')
+console.log('Conceptos básicos: Ciclos')
+console.log('#########################\n\n')
 
-const INCREMENT_WEIGHT = 0.2
+function forcycle(gabriel)
+{
+    console.log(`Al inicio del año ${gabriel.name} pesa ${gabriel.weight} Kg.`)
 
-const gainWeight = person => person.weight += INCREMENT_WEIGHT
-const loseWeight = person => person.weight -= INCREMENT_WEIGHT
+    const INCREMENT_WEIGHT = 0.2
 
-for (let i = 1; i <= 365; i++) {
-    var random = Math.random()
+    const gainWeight = person => person.weight += INCREMENT_WEIGHT
+    const loseWeight = person => person.weight -= INCREMENT_WEIGHT
 
-    if (random < 0.25) {
-        var ganepeso = gainWeight(gabriel)
+    for (let i = 1; i <= 365; i++) {
+        var random = Math.random()
+
+        if (random < 0.25) {
+            var ganepeso = gainWeight(gabriel)
+        }
+        else if (random < 0.5) {
+            loseWeight(gabriel)
+        }
     }
-    else if (random < 0.5) {
-        loseWeight(gabriel)
+   
+    console.log(`Al final del año ${gabriel.name} pesa ${gabriel.weight.toFixed(1)} Kg.`)
+}
+
+forcycle(gabriel)
+
+function switchcycle()
+{
+    let signo = prompt('Favor ingresa tu signo')
+
+    signo = signo.toLowerCase()
+
+    switch (signo) {
+        case 'acuario':
+            console.log('Ha elegido acuario')
+        break
+        
+        case 'piscis':
+            console.log('Ha elegido piscis')
+        break
+        
+        case 'sagitario':
+            console.log('Ha elegido sagitario')
+        break
+
+        default:
+            console.log('Ha elegido un signo no documentado')
+        break
     }
 }
 
-console.log(`Al final del año ${gabriel.name} pesa ${gabriel.weight.toFixed(1)} Kg.`)
-
-let signo = prompt('Favor ingresa tu signo')
-
-signo = signo.toLowerCase()
-
-switch (signo) {
-    case 'acuario':
-        console.log('Ha elegido acuario')
-    break
-    
-    case 'piscis':
-        console.log('Ha elegido piscis')
-    break
-    
-    case 'sagitario':
-        console.log('Ha elegido sagitario')
-    break
-
-    default:
-        console.log('Ha elegido un signo no documentado')
-    break
-}
+switchcycle()

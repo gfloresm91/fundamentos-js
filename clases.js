@@ -1,4 +1,9 @@
 // Class in javascript are prototype
+console.log('\n\n')
+console.log('##########################')
+console.log('Conceptos básicos: Clases')
+console.log('##########################\n\n')
+
 class Person {
     constructor(name, lastname, height)
     {
@@ -27,6 +32,10 @@ maria.greet()
 pablo.greet()
 
 // Herencia
+console.log('\n\n')
+console.log('###########################')
+console.log('Conceptos básicos: Herencia')
+console.log('###########################\n\n')
 class Developer extends Person {
     constructor(name, lastname, height)
     {

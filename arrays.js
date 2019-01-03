@@ -50,11 +50,16 @@ var people = [
     ]
 
 // Filters in arrays
+console.log('\n\n')
+console.log('##########################')
+console.log('Conceptos básicos: Arrays')
+console.log('##########################\n\n')
+
 const isTall = ( { altura } ) => altura > 1.8
 
 // This return a new object            
 var peopleTall = people.filter(isTall)
-console.log(peopleTall)
+console.log(`Filter: ${peopleTall}\n\n`)
 
 // This is other form, same result, preview method is recomended
 // var peopleTall = personas.filter(function (people){
@@ -63,7 +68,7 @@ console.log(peopleTall)
 
 // Transform arrays
 // Pass height to cm
-
+console.log('Transformando arrays con map\n\n')
 const passHeightToCM = person => ({
     ...person,    
     altura : person.altura * 100
@@ -79,8 +84,10 @@ const passHeightToCM = person => ({
 
 var personCms = people.map(passHeightToCM)
 console.log(personCms)
+console.log('\n\n')
 
 // Reduce arrays
+console.log('Reduce\n\n')
 const reducer = (acum, { cantidadDeLibros }) => acum + cantidadDeLibros
 
 var totalLibrary = people.reduce(reducer, 0)
