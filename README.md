@@ -17,3 +17,10 @@
 - Callbacks
 - Asincronismo: async, await
 - Promesas
+- var, let y const
+- Manejo de fechas
+- Funciones recursivas
+- Memorización
+- Closures en JavaScript
+- Estructura de datos inmutables
+- Bind y otras funciones
